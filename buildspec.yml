@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+    commands:
+      - echo Entering dashboardclient directory
+      - cd dashboardclient
+      - echo Installing frontend dependencies
+      - npm install
+  build:
+    commands:
+      - echo Building frontend
+      - npm run build
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'dashboardclient/dist'
